@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rock Paper Scissors Part 1</title>
+</head>
+<body>
+
+<div id="game">
+
+</div>
+
+<script type="text/javascript">
+
+// Create an array that lists out all of the options
+var options = ['r','p','s'];
+	var win = 0;
+	var tie = 0;
+	var loss =0;
+// Captures Key Clicks
+document.onkeyup = function(event) {
+
+	// Determines which exact key was selected. Make it lowercase
+	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+	var computerGuess = options[Math.floor(Math.random()*options.length)];
+	
+
+	if((userGuess == 'r') || (userGuess =='p')|| (userGuess =='s')){
+	
+	}
+	// Alerts with user guess
+
+	// Create code to randomly choose one of the three options (Computer) 
+	var computerGuess = options[Math.floor(Math.random()*options.length)];
+
+	// Alerts with Computer guess
+if((userGuess == 'r') || (userGuess =='p')|| (userGuess =='s')){
+		if(( userGuess =='r') && (computerGuess == 's')){
+			win++;
+		}
+		else if((userGuess =='r') && ( computerGuess == 'r')){
+			tie++
+		}
+		else if((userGuess =='r') && (computerGuess == 'p')) {
+			loss++
+		}
+
+		else if(( userGuess =='s') && (computerGuess == 'p')){
+			win++;
+		}
+		else if((userGuess =='s') && ( computerGuess == 's')){
+			tie++
+		}
+		else if((userGuess =='s') && (computerGuess == 'r')){
+			loss++
+		}
+
+		else if( (userGuess =='p') && (computerGuess == 'r')){
+			win++;
+		}
+		else if((userGuess =='p') && ( computerGuess == 'p')){
+			tie++
+		}
+		else if((userGuess =='p') && (computerGuess == 's')){
+			loss++
+		}
+}
+
+
+		document.querySelector('#game').innerHTML =   'you chose:' + userGuess +'. The Computer chose ' + computerGuess + ' win= '+ win +'<br>'; document.querySelector('#game').innerHTML =   'you chose:' + userGuess +'. The Computer chose ' + computerGuess +'loss= '+ loss +'<br>';  document.querySelector('#game').innerHTML =   'you chose:' + userGuess +'. The Computer chose ' + computerGuess + 'tie=' + tie +'<br>'; 
+	}
+
+
+</script>
+</body>
+</html>
